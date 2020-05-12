@@ -28,6 +28,12 @@ Route::get('/cliente/cadastrar', function () {
     // E para usar na view, apenas usar a variável com o nome do valor.
 });
 
+Route::get('/blade', function () {
+    $nome = 'Jean';
+    $variavel1 = 'valor1';
+    return view('test', compact('nome', 'variavel1'));
+});
+
 //Route::get('/cliente', function () {
 //    // CSRF - Token
 //    // Temos que enviar também, o Token
