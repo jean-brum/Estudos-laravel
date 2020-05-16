@@ -18,6 +18,17 @@ Route::get('/', function () {
     return view('welcome'); // helper - em laravel, é uma função
 });
 
+Route::get('/for-if/{value}', function ($value){
+   return view('forIf')
+    ->with('value', $value)
+    ->with("myArray", [
+       "chave1" => "valor1",
+       "chave2" => "valor2",
+       "chave3" => "valor3",
+    ])
+    ->with("myArray2", []);
+});
+
 Route::get('/cliente/cadastrar', function () {
     $nome = 'Jean';
     return view('cliente.cadastrar', compact('nome'));
